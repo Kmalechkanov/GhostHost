@@ -1,6 +1,6 @@
 function calculate(arr) {
     if (arr.length <= 3) {
-        return { sequence: arr, sum: arr.reduce((a,x)=> a+x)}
+        return { sequence: arr, sum: arr.reduce((a, x) => a + x) }
     }
 
     let bestSequenceIndex = 0
@@ -9,8 +9,7 @@ function calculate(arr) {
     let sum = arr[0] + arr[1]
     for (let i = 2; i < arr.length; i++) {
         sum += arr[i]
-
-        if (bestSum < sum) {
+        if (bestSum <= sum) {
             bestSum = sum
             bestSequenceIndex = i - 2
         }
@@ -32,6 +31,8 @@ test([11, 14]) // { sequence: [ 11, 14 ], sum: 25 }
 test([11, 14, 10, 12]) // { sequence: [ 14, 10, 12 ], sum: 36 }
 test([17, 14, 10, 12, 5]) // { sequence: [ 17, 14, 10 ], sum: 41 }
 test([9, 14, 16, 12, 58]) // { sequence: [ 16, 12, 58 ], sum: 86 }
+test([12, 9, 1, 5, 11, 5]) // { sequence: [12, 9, 1], sum: 22 }
+test([76, 80, 81, 77, 83, 78, 80]) //  { sequence: [ 83, 78, 80 ], sum: 241 }
 
 function calculate1(arr) {
     if (arr.length <= 3) {
@@ -46,7 +47,7 @@ function calculate1(arr) {
             sum += arr[i + j]
         }
 
-        if (bestSum < sum) {
+        if (bestSum <= sum) {
             bestSum = sum
             bestSequenceIndex = i
         }
