@@ -1,18 +1,17 @@
 window.onload = () => {
     let slideshow = document.getElementById('slideshow')
-    const timer = 5 * 1000
     let slideIndex = 0
-    let interval = setInterval(slideSlide, timer)
+    const slideTimer = 5 * 1000 + 2
+    let interval = setInterval(slideSlide, slideTimer)
 
 
     slideshow.addEventListener('click', (event) => {
         let current = event.target
         if (current.tagName === 'I') {
             clearInterval(interval)
-            interval = setInterval(slideSlide, timer)
+            interval = setInterval(slideSlide, slideTimer)
 
             let slide = current.parentElement.parentElement.parentElement
-            slide.classList.add('hidden')
 
             // TODO Use something better 
             if (current.parentElement.children[1] == current) {
@@ -26,8 +25,8 @@ window.onload = () => {
             }
 
             let newSlide = slide.parentElement.children[slideIndex]
-            newSlide.classList.remove('hidden')
-            
+
+            switchVisible(slide, newSlide)
             setImage(newSlide.children[0].src)
         }
     })
@@ -44,14 +43,21 @@ window.onload = () => {
         let newSlide = slideshow.children[newIndex]
         let oldSlide = slideshow.children[oldIndex]
 
-        oldSlide.classList.add('hidden')
-        newSlide.classList.remove('hidden')
-
+        switchVisible(oldSlide, newSlide)
         setImage(newSlide.children[0].src)
     }
-    
+
     function setImage(image) {
         slideshow.style.backgroundImage =
             `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("${image}")`
+    }
+
+    function switchVisible(first, second) {
+        first.classList = 'hideAnimation'
+        first.children[0].classList = 'hideAnimation'
+        let timer = setTimeout(() => {
+            first.classList = "hidden"
+        }, 1900)
+        second.classList = 'visible'
     }
 }

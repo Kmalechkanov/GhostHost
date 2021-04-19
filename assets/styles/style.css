@@ -3,6 +3,7 @@ body {
     width: 100%;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 /* TODO change font */
@@ -209,7 +210,7 @@ header a:hover {
     width: 60%;
     padding: 40px 20%;
     position: absolute;
-    bottom:5px;
+    bottom: 5px;
 }
 
 #slideshow img {
@@ -218,6 +219,12 @@ header a:hover {
 
 .hidden {
     display: none;
+}
+
+.visible {
+    position: relative;
+    animation-name: left-slide-in;
+    animation-duration: 2s;
 }
 
 #summary {
@@ -279,4 +286,32 @@ footer ul {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.hideAnimation {
+    position: relative;
+    animation-name: left-slide-out;
+    animation-duration: 2s;
+}
+
+@keyframes left-slide-in {
+    0% {
+        left: -50%;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+@keyframes left-slide-out {
+    0% {
+        left: 0px;
+        opacity: 1;
+    }
+    100% {
+        left: 50%;
+        opacity: 0;
+    }
 }
