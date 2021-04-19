@@ -188,6 +188,7 @@ header a:hover {
     color: rgb(197, 197, 197);
     height: 20vh;
     position: relative;
+    overflow: hidden;
 }
 
 #slideshow i {
