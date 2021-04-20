@@ -1,9 +1,8 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     let slideshow = document.getElementById('slideshow')
     let slideIndex = 0
     const slideTimer = 5 * 1000 + 2
     let interval = setInterval(slideSlide, slideTimer)
-
 
     slideshow.addEventListener('click', (event) => {
         let current = event.target
@@ -60,4 +59,4 @@ window.onload = () => {
         }, 1900)
         second.classList = 'visible'
     }
-}
+})

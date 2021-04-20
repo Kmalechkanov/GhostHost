@@ -8,15 +8,19 @@
     <title>Ghost Host</title>
     <script src="https://kit.fontawesome.com/50873624b2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/assets/styles/style.css">
+    <script src="/scripts/burgerMenu.js"></script>
     <script src="/scripts/slideshow.js"></script>
     <!-- <script src="/scripts/scroll.js"></script> -->
 </head>
 
 <body class="unselectable">
     <header>
-        <img src="/assets/icons/logo-resized.svg" alt="GhostHost">
+        <div>
+            <img src="/assets/icons/logo-resized.svg" alt="GhostHost">
+            <a href="#" id="burger">X</a>
+        </div>
         <nav id="main-nav">
-            <ul>
+            <ul class="visible">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Domain</a></li>
                 <li><a href="#">Hosting</a></li>
