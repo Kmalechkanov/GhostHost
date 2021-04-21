@@ -4,6 +4,7 @@ body {
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
+    overflow-wrap: break-word;
 }
 
 /* TODO change font */
@@ -344,5 +345,58 @@ footer ul {
         display: block;
         float: right;
         padding: 20px 10%;
+    }
+
+    #about-us {
+        height: unset;
+        display: block;
+        padding: unset 10%;
+    }
+    .left-split {
+        width: unset;
+        padding-right: unset;
+        border-right: unset;
+    }   
+    .right-split {
+        width: unset;
+        padding-left: unset;
+    }
+    
+    #slideshow {
+        height: 50vh;
+    }
+
+    #summary {
+        display: block;
+        height: unset;
+    }
+
+    #summary div {
+        width: unset;
+    }
+
+    #auth {
+        justify-content: space-evenly;
+    }
+
+    #auth a {
+        padding: 40px 0;
+    }
+
+    footer {
+        display: block;
+    }
+
+    footer > section {
+        border-right: unset;
+        width: unset;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    #main-nav>ul {
+        display: flex; 
+        float: unset;
+        flex-wrap: wrap;
     }
 }
